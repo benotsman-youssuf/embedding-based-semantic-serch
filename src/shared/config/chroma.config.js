@@ -5,7 +5,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Chroma DB Client - connect to local ChromaDB instance
-export const client = new ChromaClient({});
+export const client = new ChromaClient({
+  host: "chroma",host: "http://localhost:",
+  port: 8000,
+  ssl: false
+});
 
 // Cohere embedder
 export const embedder = new CohereEmbeddingFunction({
