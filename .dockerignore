@@ -1,29 +1,26 @@
+# Ignore node_modules — you'll run npm install in Docker
 node_modules
-npm-debug.log
+
+# Ignore logs
+logs
+*.log
+
+# Ignore environment files (if not needed in image)
+.env
+.env.local
+
+# Ignore Docker artifacts
+Dockerfile
+docker-compose.yml
+
+# Ignore test files
+__tests__/
+*.test.js
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Git
 .git
 .gitignore
-README.md
-.env
-.nyc_output
-coverage
-.DS_Store
-*.log
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.vscode
-.idea
-*.swp
-*.swo
-*~
-.DS_Store?
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
-*.lnk 

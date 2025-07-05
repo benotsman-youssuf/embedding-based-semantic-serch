@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import router from "./src/search/search.routes.js";
-import { EmbedToDb } from "./src/shared/utils/embed.js";
-import { errorHandler } from "./src/shared/middlewares/errorHandler.js";
+import router from "./search/search.routes.js";
+import { EmbedToDb } from "./shared/utils/embed.js";
+import { errorHandler } from "./shared/middlewares/errorHandler.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;

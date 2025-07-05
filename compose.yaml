@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+  chroma:
+    image: chromadb/chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma-data:/chroma/chroma-data
+    environment:
+      - ALLOW_RESET=true
+      - CHROMA_SERVER_CORS_ALLOW_ORIGINS=["*"]

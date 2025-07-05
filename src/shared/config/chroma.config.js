@@ -1,13 +1,11 @@
 import { ChromaClient } from "chromadb";
 import { CohereEmbeddingFunction } from "@chroma-core/cohere";
-import fs from "fs";
+import { readFile } from "fs/promises";
 import dotenv from "dotenv";
 dotenv.config();
 
 // Chroma DB Client - connect to local ChromaDB instance
-export const client = new ChromaClient({
-  path: "http://localhost:8000"
-});
+export const client = new ChromaClient({});
 
 // Cohere embedder
 export const embedder = new CohereEmbeddingFunction({
@@ -17,10 +15,10 @@ export const embedder = new CohereEmbeddingFunction({
 
 //رياض الصالحين JSON
 export const data = JSON.parse(
-  await fs.promises.readFile("./data/riyad_assalihin.json", "utf-8")
+  await readFile("./data/riyad_assalihin.json", "utf-8")
 );
 
 export const collection = await client.getOrCreateCollection({
-  name: "book",
+  name: "hadith",
   embeddingFunction: embedder,
 });
