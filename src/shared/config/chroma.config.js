@@ -4,8 +4,10 @@ import fs from "fs";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Chroma DB Client
-export const client = new ChromaClient();
+// Chroma DB Client - connect to local ChromaDB instance
+export const client = new ChromaClient({
+  path: "http://localhost:8000"
+});
 
 // Cohere embedder
 export const embedder = new CohereEmbeddingFunction({
