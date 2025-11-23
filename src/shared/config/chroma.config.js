@@ -4,11 +4,11 @@ import { readFile } from "fs/promises";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Chroma DB Client - connect to local ChromaDB instance
+// Chroma DB Client - configurable for different environments
 export const client = new ChromaClient({
-  host: "chroma",
-  port:"8000",
-  ssl: false
+  host: process.env.CHROMA_HOST || 'chroma',
+  port: process.env.CHROMA_PORT || '8000',
+  ssl: process.env.CHROMA_SSL === 'true' || false
 });
 
 // Cohere embedder
