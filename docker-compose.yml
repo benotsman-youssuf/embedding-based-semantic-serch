@@ -16,4 +16,4 @@ services:
       - ./chroma-data:/chroma/chroma-data
     environment:
       - ALLOW_RESET=true
-      - CHROMA_SERVER_CORS_ALLOW_ORIGINS=["*"]
+      - CHROMA_SERVER_CORS_ALLOW_ORIGINS=*
